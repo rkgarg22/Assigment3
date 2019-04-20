@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Assigment3</string>
+
+    <string name="next_btn">NEXT</string>
+    <string name ="search_screen_title">Now, let\'s add your shoes.\nJust search for them below.</string>
+    <string name="search">Search</string>
+    <string name="type">Type</string>
+    <string name="color">Color</string>
+    <string name="skip_btn">SKIP</string>
+    <string name="done_btn">DONE</string>
+
+    <string name ="general_info_title">Sure thing, you can just\nselect general info for now.</string>
+    <string name ="select_style_title">Select a style</string>
+    <string name ="select_color_title">Select a color</string>
+    <string name ="shoes_detail_title">Are these your shoes?</string>
+
+    <string name="casual">Casual</string>
+    <string name="dress">Dress</string>
+    <string name="work">Work</string>
+    <string name="athletic">Athletic</string>
+</resources>

@@ -1,0 +1,135 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.demo.assigment3.view.GeneralInfoActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.demo.assigment3.viewmodel.GeneralInfoViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/backButtonClick"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:onClick="@{()->viewModel.backBtnClick()}"
+                android:src="@drawable/left_icon"
+                android:tint="@color/text_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="@string/next_btn"
+                android:textColor="@color/cyan"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="@string/general_info_title"
+            android:textColor="@color/text_color"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:id="@+id/typeLayout"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/titleTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/curve_stroke_bg"
+            android:onClick="@{()->viewModel.styleBtnClick()}">
+
+            <ImageView
+                android:id="@+id/searchBtnIcon"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/search_icon"
+                android:tint="@color/text_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/searchBtnIcon"
+                android:text="@string/type"
+                android:textColor="@color/text_color"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/down_arrow"
+                android:tint="@color/text_color" />
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/typeLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/curve_stroke_bg"
+            android:onClick="@{()->viewModel.colorBtnClick()}">
+
+            <TextView
+                android:id="@+id/color"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/curve_stroke_bg"
+                android:tint="@color/text_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/color"
+                android:text="@string/color"
+                android:textColor="@color/text_color"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/down_arrow"
+                android:tint="@color/text_color" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

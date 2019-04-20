@@ -1,0 +1,215 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.demo.assigment3.view.SelectStyleActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.demo.assigment3.viewmodel.SelectStyleViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/backButtonClick"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:onClick="@{()->viewModel.backBtnClick()}"
+                android:src="@drawable/left_icon"
+                android:tint="@color/text_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="@string/done_btn"
+                android:textColor="@color/cyan"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="@string/select_style_title"
+            android:textColor="@color/text_color"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp">
+
+            <RelativeLayout
+                android:id="@+id/casualLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/casualImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/shoe" />
+
+                <TextView
+                    android:id="@+id/casualText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/casualImage"
+                    android:layout_alignLeft="@+id/casualImage"
+                    android:layout_alignRight="@+id/casualImage"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/casual"
+                    android:textColor="@color/text_color"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/casualTikImage"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/casualText"
+                    android:layout_alignBottom="@+id/casualText"
+                    android:src="@drawable/check_icon"
+                    android:tint="@color/cyan" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/athleticLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/casualLayout">
+
+                <ImageView
+                    android:id="@+id/athleticImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/shoe" />
+
+                <TextView
+                    android:id="@+id/athleticText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/athleticImage"
+                    android:layout_alignLeft="@+id/athleticImage"
+                    android:layout_alignRight="@+id/athleticImage"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/athletic"
+                    android:textColor="@color/text_color"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/athleticTikImage"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/athleticText"
+                    android:layout_alignBottom="@+id/athleticText"
+                    android:src="@drawable/check_icon"
+                    android:tint="@color/cyan" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dressLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/casualLayout"
+                android:layout_alignLeft="@+id/casualLayout"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/dressImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/shoe" />
+
+                <TextView
+                    android:id="@+id/dressText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dressImage"
+                    android:layout_alignLeft="@+id/dressImage"
+                    android:layout_alignRight="@+id/dressImage"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/dress"
+                    android:textColor="@color/text_color"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/dressTikImage"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/dressText"
+                    android:layout_alignBottom="@+id/dressText"
+                    android:src="@drawable/check_icon"
+                    android:tint="@color/cyan" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/workLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/athleticLayout"
+                android:layout_alignLeft="@+id/athleticLayout"
+                android:layout_alignTop="@+id/dressLayout">
+
+                <ImageView
+                    android:id="@+id/workImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/shoe" />
+
+                <TextView
+                    android:id="@+id/workText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/workImage"
+                    android:layout_alignLeft="@+id/workImage"
+                    android:layout_alignRight="@+id/workImage"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/work"
+                    android:textColor="@color/text_color"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/workTikImage"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/workText"
+                    android:layout_alignBottom="@+id/workText"
+                    android:src="@drawable/check_icon"
+                    android:tint="@color/cyan" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

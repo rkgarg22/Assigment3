@@ -1,0 +1,110 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.demo.assigment3.view.ShoesListActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.demo.assigment3.viewmodel.ShoesListViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/backButtonClick"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:onClick="@{()->viewModel.backBtnClick()}"
+                android:src="@drawable/left_icon"
+                android:tint="@color/text_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="@string/next_btn"
+                android:textColor="@color/cyan"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/titleView"
+            android:layout_centerHorizontal="true"
+            android:background="@color/text_color"
+            android:gravity="center"
+            android:text="@string/general_info_title"
+            android:textColor="@color/lightgrey"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/titleTextView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_corner_bg">
+
+            <ImageView
+                android:id="@+id/searchBtnIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/search_icon"
+                android:tint="@color/text_color" />
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/searchBtnIcon"
+                android:hint="@string/search"
+                android:text="@={viewModel.editTextContent}"
+                android:background="@android:color/transparent"
+                android:textColor="@color/text_color"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:onClick="@{()->viewModel.speakBtnClick()}"
+                android:src="@drawable/mike_icon"
+                android:tint="@color/text_color" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/shoesListRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/searchLayout"
+            android:layout_marginTop="20dp"
+            app:adapter="@{viewModel.shoesItemArrayList}"
+            android:paddingLeft="20dp" />
+    </RelativeLayout>
+
+</layout>

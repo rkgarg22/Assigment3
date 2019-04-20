@@ -1,0 +1,72 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.demo.assigment3.view.SelectColorActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.demo.assigment3.viewmodel.SelectColorViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/backButtonClick"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:onClick="@{()->viewModel.backBtnClick()}"
+                android:src="@drawable/left_icon"
+                android:tint="@color/text_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="@string/done_btn"
+                android:textColor="@color/cyan"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="@string/select_color_title"
+            android:textColor="@color/text_color"
+            android:textSize="25sp" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/colorRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/titleTextView"
+            android:layout_marginTop="40dp"
+            android:clipToPadding="false"
+            app:adapter="@{viewModel.colorItemArrayList}"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+    </RelativeLayout>
+
+</layout>
